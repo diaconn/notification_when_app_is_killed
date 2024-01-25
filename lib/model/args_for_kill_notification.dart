@@ -5,11 +5,19 @@ import 'args_for_ios.dart';
 class ArgsForKillNotification {
   final String title;
   final String description;
+  /* 디아콘 추가 시작 */
+  final String? channelId;
+  final String? channelName;
+  /* 디아콘 추가 끝 */
   final ArgsForIos? argsForIos;
 
   ArgsForKillNotification({
     required this.title,
     required this.description,
+    /* 디아콘 추가 시작 */
+    this.channelId,
+    this.channelName,
+    /* 디아콘 추가 끝 */
     this.argsForIos,
   });
 
@@ -26,6 +34,8 @@ class ArgsForKillNotification {
     return {
       'title': title,
       'description': description,
+      'channelId': channelId,
+      'channelName': channelName,
     };
   }
 }

@@ -26,6 +26,10 @@ class NotificationWhenAppIsKilledPlugin: FlutterPlugin, MethodCallHandler {
       "setNotificationOnKillService" -> {
         val title = call.argument<String>("title")
         val description = call.argument<String>("description")
+        /* 디아콘 추가 시작 */
+        val channelId = call.argument<String>("channelId")
+        val channelName = call.argument<String>("channelName")
+        /* 디아콘 추가 끝 */
         val interruptionLevel = call.argument<Int>("interruptionLevel")
         val useDefaultSound = call.argument<Boolean>("useDefaultSound")
 
@@ -33,6 +37,10 @@ class NotificationWhenAppIsKilledPlugin: FlutterPlugin, MethodCallHandler {
 
         serviceIntent.putExtra("title", title)
         serviceIntent.putExtra("description", description)
+        /* 디아콘 추가 시작 */
+        serviceIntent.putExtra("channelId", channelId)
+        serviceIntent.putExtra("channelName", channelName)
+        /* 디아콘 추가 끝 */
         serviceIntent.putExtra("interruptionLevel", interruptionLevel)
         serviceIntent.putExtra("useDefaultSound", useDefaultSound)
 
