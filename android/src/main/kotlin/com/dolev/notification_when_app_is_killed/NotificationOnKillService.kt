@@ -40,7 +40,7 @@ class NotificationOnKillService: Service() {
 
             /* 디아콘 수정 시작 */
             val notificationBuilder = NotificationCompat.Builder(this, channelId)
-                //.setSmallIcon(android.R.drawable.ic_notification_overlay)
+                .setSmallIcon(R.drawable.ic_notification_overlay)
                 .setContentTitle(title)
                 .setContentText(description)
                 .setAutoCancel(true)
