@@ -58,7 +58,7 @@ class NotificationOnKillService: Service() {
             val notificationManager: NotificationManager =
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
-            notificationManager.notify(Instant.now().epochSecond, notificationBuilder.build())
+            notificationManager.notify(Instant.now().epochSecond.toInt(), notificationBuilder.build())
         } catch (e: Exception) {
             Log.d("NotificationOnKillService", "Error showing notification", e)
         }
