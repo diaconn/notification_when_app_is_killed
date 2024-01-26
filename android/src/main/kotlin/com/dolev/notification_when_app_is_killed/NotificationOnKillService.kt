@@ -12,6 +12,7 @@ import android.provider.Settings
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import io.flutter.Log
+import java.time.Instant
 
 class NotificationOnKillService: Service() {
     private lateinit var title: String
@@ -57,7 +58,7 @@ class NotificationOnKillService: Service() {
             val notificationManager: NotificationManager =
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
-            notificationManager.notify(123, notificationBuilder.build())
+            notificationManager.notify(Instant.now().epochSecond, notificationBuilder.build())
         } catch (e: Exception) {
             Log.d("NotificationOnKillService", "Error showing notification", e)
         }
