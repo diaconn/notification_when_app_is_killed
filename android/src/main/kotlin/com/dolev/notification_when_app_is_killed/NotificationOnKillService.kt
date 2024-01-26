@@ -25,8 +25,8 @@ class NotificationOnKillService: Service() {
         title = intent?.getStringExtra("title") ?: "Your alarms may not ring"
         description = intent?.getStringExtra("description") ?: "You killed the app. Please reopen so your alarms can be rescheduled."
         /* 디아콘 추가 시작 */
-        channelId = intent?.getStringExtra("channelId") ?: "com.diaconn.app.default"
-        channelName = intent?.getStringExtra("channelName") ?: "DIA:CONN"
+        channelId = intent?.getStringExtra("channelId") ?: "com.diaconn.app.guard"
+        channelName = intent?.getStringExtra("channelName") ?: "DIA:CONN GUARD"
         /* 디아콘 추가 끝 */
         return START_STICKY
     }
@@ -47,6 +47,7 @@ class NotificationOnKillService: Service() {
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentIntent(pendingIntent)
                 .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
 
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(channelId, channelName, importance)
