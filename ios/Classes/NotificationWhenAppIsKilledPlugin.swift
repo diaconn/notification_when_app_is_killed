@@ -69,7 +69,8 @@ public class NotificationWhenAppIsKilledPlugin: NSObject, FlutterPlugin {
     if (notificationUseDefaultSound == true) {
     content.sound = UNNotificationSound.default
     }
-    let request = UNNotificationRequest(identifier: "notification on app kill", content: content, trigger: trigger)
+    let uniqueId = UUID()
+    let request = UNNotificationRequest(identifier: uniqueId.uuidString, content: content, trigger: trigger)
 
     UNUserNotificationCenter.current().add(request) { (error) in
       if let error = error {
