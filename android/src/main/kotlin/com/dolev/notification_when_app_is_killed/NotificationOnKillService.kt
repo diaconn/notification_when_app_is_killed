@@ -49,7 +49,7 @@ class NotificationOnKillService: Service() {
                 .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
 
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val importance = NotificationManager.IMPORTANCE_HIGH
             val channel = NotificationChannel(channelId, channelName, importance)
             /* 디아콘 수정 끝 */
 
