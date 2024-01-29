@@ -23,8 +23,8 @@ class NotificationOnKillService: Service() {
     /* 디아콘 추가 끝 */
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        title = intent?.getStringExtra("title") ?: "Your alarms may not ring"
-        description = intent?.getStringExtra("description") ?: "You killed the app. Please reopen so your alarms can be rescheduled."
+        title = intent?.getStringExtra("title") ?: "Diaconn"
+        description = intent?.getStringExtra("description") ?: "Please always activate the Diacon app to ensure smooth operation with your device."
         /* 디아콘 추가 시작 */
         channelId = intent?.getStringExtra("channelId") ?: "com.diaconn.app.guard"
         channelName = intent?.getStringExtra("channelName") ?: "DIA:CONN GUARD"
