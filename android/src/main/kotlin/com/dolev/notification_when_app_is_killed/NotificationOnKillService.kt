@@ -44,6 +44,7 @@ class NotificationOnKillService: Service() {
                 .setSmallIcon(R.drawable.ic_notification_overlay)
                 .setContentTitle(title)
                 .setContentText(description)
+                .setStyle(NotificationCompat.BigTextStyle())
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentIntent(pendingIntent)
