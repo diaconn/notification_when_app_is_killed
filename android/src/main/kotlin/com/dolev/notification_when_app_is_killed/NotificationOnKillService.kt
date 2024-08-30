@@ -23,11 +23,11 @@ class NotificationOnKillService: Service() {
     /* 디아콘 추가 끝 */
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        title = intent?.getStringExtra("title") ?: "Diaconn"
+        title = intent?.getStringExtra("title") ?: "ezLoop"
         description = intent?.getStringExtra("description") ?: "Preparing"
         /* 디아콘 추가 시작 */
-        channelId = intent?.getStringExtra("channelId") ?: "com.diaconn.app.guard"
-        channelName = intent?.getStringExtra("channelName") ?: "DIA:CONN GUARD"
+        channelId = intent?.getStringExtra("channelId") ?: "com.diaconn.ez_loop.guard"
+        channelName = intent?.getStringExtra("channelName") ?: "ezLoop GUARD"
         /* 디아콘 추가 끝 */
         return START_STICKY
     }
